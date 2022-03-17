@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <h1> Pets </h1>
+    
+    <div class="row">
+     
+      
+      {% for pet in pets %}
+      <div class="col-4">
+      
+     
+          <br><img src = "{{ pet.photo_url }}" alt = "{{pet.name}}" width="20%" height="30%"> </li> 
+          <p> Hi, my name is {{ pet.name }} </p>
+          
+          <p> {{ pet.name }} is available for adoption : {{ pet.available }} </p> 
+          <p>For more information: </p>
+          <a href= "/{{pet.id}}"> {{ pet.name }}</a>
+
+      </div>
+      {% endfor %}
+    </div>
+    <br>
+    <br>
+    <a class="btn btn-success" id="button" href="/add">Add a Pet</a>
+
+    </div>
+  
+
+    {% endblock %}
